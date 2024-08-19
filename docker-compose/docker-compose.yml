@@ -1,0 +1,38 @@
+services:
+  configserver:
+    image: saketverma908/config-server:1.0.0
+    container_name: "configserver"
+    ports:
+      - "8083:8083"
+    deploy:
+      resources:
+        limits:
+          memory: 2000m
+    healthcheck:
+      test: "curl --fail --silent localhost:8083/actuator/health/readiness | grep UP || exit 1"
+      start_period: 5s
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    networks:
+      - LMS
+  query:
+    image: saketverma908/query:1.0.0
+    container_name: "query"
+    ports:
+      - "8082:8082"
+    deploy:
+      resources:
+        limits:
+          memory: 2000m
+    depends_on:
+      configserver:
+        condition: service_healthy
+    environment:
+        SPRING_CONFIG_IMPORT: "configserver:http://configserver:8083/"
+    networks:
+        - LMS
+
+networks:
+  LMS:
+    driver: "bridge"

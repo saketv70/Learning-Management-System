@@ -1,0 +1,36 @@
+build:
+  version: "4.0"
+server:
+  port: 8080
+spring:
+  application:
+    name: employee
+  config:
+    import: "optional:configserver:http://localhost:8071"
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: ""
+    driverClassName: org.h2.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka : true
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka/"
+
+info:
+  app:
+    name: "Employee MS"
+    description: "Employee MS for LMS"
+    version : "1.0.0"
