@@ -11,6 +11,7 @@
 	<groupId>com.lms</groupId>
 	<artifactId>courses</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>courses</name>
 	<description>Learning management system</description>
 	<url/>
@@ -81,6 +82,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -113,7 +119,7 @@
 				<version>3.4.1</version>
 				<configuration>
 					<to>
-						<image>saketverma908/${project.artifactId}:1.0.0</image>
+						<image>mohammed8801/${project.artifactId}:1.0.0</image>
 					</to>
 				</configuration>
 			</plugin>
