@@ -13,4 +13,4 @@ CREATE TABLE IF NOT EXISTS 'mentorXjoiner' (
     `mentor_id` INT,
     `joiner_id` INT,
     PRIMARY KEY (`mentor_id`, joiner_id`)
-)
+);
