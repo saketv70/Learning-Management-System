@@ -16,4 +16,6 @@ public interface IEmployeeService {
     boolean deleteDetails(String email);
 
     List<Employee> fetchDetailsByRole(String role);
+
+    String getRoleByEmployeeId(Long employeeId);
 }

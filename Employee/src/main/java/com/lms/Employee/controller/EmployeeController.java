@@ -22,13 +22,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @Validated
+@CrossOrigin
 public class EmployeeController {
 
     @Value("${build.version}")
     private String buildVersion;
 
-    @Autowired
-    private EmployeeServiceImpl employeeService;
+//    private EmployeeServiceImpl employeeService;
 
     private final IEmployeeService iEmployeeService;
 
@@ -92,7 +92,7 @@ public class EmployeeController {
 
     @GetMapping("/employee/{employeeId}/role")
     public String getRole(@PathVariable Long employeeId) {
-        return employeeService.getRoleByEmployeeId(employeeId);
+        return iEmployeeService.getRoleByEmployeeId(employeeId);
     }
 }
 

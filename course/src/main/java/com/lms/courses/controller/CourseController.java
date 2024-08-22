@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/courses")
+@CrossOrigin
 public class CourseController {
     private ICourseService iCourseService;
 

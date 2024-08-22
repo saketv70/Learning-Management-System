@@ -82,6 +82,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         return allByRole;
     }
 
+    @Override
     public String getRoleByEmployeeId(Long employeeId) {
         Employee employee = employeeRepository.findByEmployeeId(employeeId);
         if (employee != null) {
