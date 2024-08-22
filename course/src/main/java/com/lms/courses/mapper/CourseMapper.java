@@ -1,7 +1,9 @@
 package com.lms.courses.mapper;
 
 import com.lms.courses.dto.CourseRequestDto;
+import com.lms.courses.dto.JoinerToCoursesDto;
 import com.lms.courses.entity.Course;
+import com.lms.courses.entity.JoinerToCourses;
 
 public class CourseMapper {
 
@@ -23,4 +25,17 @@ public class CourseMapper {
         return courseRequestDto;
     }
 
+    public static JoinerToCourses mapToJoinerToCourses(JoinerToCoursesDto joinerToCoursesDto, JoinerToCourses joinerToCourses) {
+        joinerToCourses.setCourseId(joinerToCoursesDto.getCourseId());
+        joinerToCourses.setJoinerId(joinerToCoursesDto.getJoinerId());
+        joinerToCourses.setIsCompleted(joinerToCoursesDto.getIsCompleted());
+        return joinerToCourses;
+    }
+
+    public static JoinerToCoursesDto mapToJoinerToCoursesDto(JoinerToCourses joinerToCourses, JoinerToCoursesDto joinerToCoursesDto) {
+        joinerToCoursesDto.setCourseId(joinerToCourses.getCourseId());
+        joinerToCoursesDto.setJoinerId(joinerToCourses.getJoinerId());
+        joinerToCoursesDto.setIsCompleted(joinerToCourses.getIsCompleted());
+        return joinerToCoursesDto;
+    }
 }
