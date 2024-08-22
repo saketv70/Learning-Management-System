@@ -27,9 +27,9 @@ public class SecurityConfig {
 //                        .pathMatchers("/lms/query/**").hasRole("Admin")
 //                        .pathMatchers("/lms/**").hasRole("Mentor")
 //                        .pathMatchers("/lms/joinee/**").hasRole("Joinee")
-                            .pathMatchers("lms/employee/**").hasRole("EMPLOYEE")
+                            .pathMatchers("lms/employee/**").hasRole("Administrator")
                         .pathMatchers("lms/course/api/create/**").hasRole("mentor")
-                        .pathMatchers("lms/course/api/create/**").hasRole("admin")
+//                        .pathMatchers("lms/course/api/create/**").hasRole("")
 
         ).oauth2ResourceServer(oAuth2ResourceServerSpec ->
                 oAuth2ResourceServerSpec.jwt(jwtSpec ->

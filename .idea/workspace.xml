@@ -34,12 +34,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ConfigServerApplication.executor": "Debug",
-    "Application.CoursesApplication.executor": "Debug",
+    "Application.ConfigServerApplication.executor": "Run",
+    "Application.CoursesApplication.executor": "Run",
     "Application.EmployeeApplication.executor": "Run",
-    "Application.EurekaServerApplication.executor": "Debug",
+    "Application.EurekaServerApplication.executor": "Run",
     "Application.GatewayServerApplication.executor": "Run",
-    "Application.QueryApplication.executor": "Debug",
+    "Application.QueryApplication.executor": "Run",
     "JUnit.EmployeeApplicationTests.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -53,7 +53,7 @@
       <recent name="C:\Users\saket.verma\OneDrive - UKG\Desktop\LMS Query and Config\eureka-server\src\main\java\com\lms\eureka_server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CoursesApplication">
+  <component name="RunManager">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lms.config_server.ConfigServerApplication" />
       <module name="config-server" />
@@ -115,6 +115,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="config-server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="config-server" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
