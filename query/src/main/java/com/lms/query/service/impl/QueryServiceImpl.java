@@ -21,22 +21,24 @@ public class QueryServiceImpl implements IQueryService {
         Query query = QueryMapper.mapToQuery(queryDto, new Query());
         queryRepository.save(query);
     }
+
     @Override
-    public QueryDto fetchQuery(Integer queryId)
+    public QueryDto fetchQuery(Long queryId)
     {
-         Query query = queryRepository.findByQueryId(queryId)
+         Query query = queryRepository.findById(queryId)
                 .orElseThrow(
                 () -> new ResourceNotFoundException("Query ", "queryId",queryId)
         );
         return QueryMapper.mapToQueryDto(query, new QueryDto());
     }
+
     @Override
-    public boolean updateQuery(QueryDto queryDto) {
+    public boolean updateQuery(Long queryId, QueryDto queryDto) {
 
         boolean isUpdated = false;
 
-        Query query = queryRepository.findByQueryId(queryDto.getQueryId()).orElseThrow(
-                () -> new ResourceNotFoundException("Query", "Id", queryDto.getQueryId())
+        Query query = queryRepository.findById(queryId).orElseThrow(
+                () -> new ResourceNotFoundException("Query", "Id", queryId)
         );
 
         if (query != null) {
@@ -49,11 +51,11 @@ public class QueryServiceImpl implements IQueryService {
     }
 
     @Override
-    public boolean deleteQuery(Integer queryid) {
+    public boolean deleteQuery(Long queryid) {
 
         boolean isDeleted = false;
 
-        Query query = queryRepository.findByQueryId(queryid).orElseThrow(
+        Query query = queryRepository.findById(queryid).orElseThrow(
                 () -> new ResourceNotFoundException("Query", "Id", queryid)
         );
         if (query != null) {

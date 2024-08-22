@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `Employee` (
     `updated_by` VARCHAR(30) DEFAULT NULL
 );
 
-CREATE TABLE IF NOT EXISTS 'mentorXjoiner' (
+CREATE TABLE IF NOT EXISTS `mentorXjoiner` (
     `mentor_id` INT,
     `joiner_id` INT,
     PRIMARY KEY (`mentor_id`, joiner_id`)
