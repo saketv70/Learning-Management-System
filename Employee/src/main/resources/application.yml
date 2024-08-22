@@ -6,24 +6,20 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8071/"
   datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
-    password: ""
-    driverClassName: org.h2.Driver
+    url: jdbc:postgresql://aws-0-us-west-1.pooler.supabase.com:6543/postgres
+    username: postgres.cjzrbpemchdyhtcnhhlr
+    password: 2jQAVxFze5pcUwTM
+    driverClassName: org.postgresql.Driver
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 logging:
   level:
     com:
       LMS-GROUP-8: debug
-
 
 build:
   version: 1.0.0
