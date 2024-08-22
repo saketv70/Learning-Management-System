@@ -22,6 +22,5 @@ public class Employee extends BaseEntity {
     private Long employeeId;
     private String employeeName;
     private String email;
-    private String password;
     private String role;
 }
