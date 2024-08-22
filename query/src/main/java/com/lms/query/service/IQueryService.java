@@ -6,9 +6,9 @@ public interface IQueryService {
 
     void createQuery(QueryDto queryDto);
 
-    QueryDto fetchQuery(Integer queryId);
+    QueryDto fetchQuery(Long queryId);
 
-    boolean updateQuery(QueryDto queryDto);
+    boolean updateQuery(Long queryId, QueryDto queryDto);
 
-    boolean deleteQuery(Integer queryId);
+    boolean deleteQuery(Long queryId);
 }

@@ -26,6 +26,7 @@ management:
   info:
     env:
       enabled: true
+
 info:
   app:
     name: "Gateway Server"

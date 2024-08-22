@@ -11,9 +11,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class QueryDto {
-    private Integer queryId;
+    private Long joiner_id;
+    private Long mentor_id;
     private String description;
     private String response;
-    private Integer joinerId;
-    private Integer mentorId;
+    private Boolean is_resolved;
 }

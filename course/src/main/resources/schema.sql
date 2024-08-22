@@ -8,8 +8,8 @@ CREATE TABLE IF NOT EXISTS `Course` (
 );
 
 CREATE TABLE IF NOT EXISTS `joinerXcourse` (
-    `joiner_id` INT,
-    `course_id` INT,
-    `is_completed` BIT NOT NULL,
-    PRIMARY KEY (`joiner_id`, `course_id`)
+    `id` INT AUTO_INCREMENT PRIMARY KEY
+    `joiner_id` INT NOT NULL,
+    `course_id` INT NOT NULL,
+    `is_completed` BIT NOT NULL DEFAULT FALSE
 );

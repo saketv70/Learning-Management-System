@@ -15,9 +15,10 @@ public class Query {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer queryId;
-    private String  description;
-    private String  response;
-    private Integer joinerId;
-    private Integer mentorId;
+    private Long query_id;
+    private Long joiner_id;
+    private Long mentor_id;
+    private String description;
+    private String response;
+    private Boolean is_resolved;
 }

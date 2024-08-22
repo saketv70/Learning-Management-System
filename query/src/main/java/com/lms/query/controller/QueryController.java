@@ -10,28 +10,29 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/queries")
 @AllArgsConstructor
 public class QueryController {
     private IQueryService iQueryService;
 
-    @PostMapping("/create")
+    @PostMapping("")
     public ResponseEntity<ResponseDto> createQ(@RequestBody QueryDto queryDto) {
         iQueryService.createQuery(queryDto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ResponseDto("Successfully Created", HttpStatus.CREATED));
     }
 
-    @GetMapping("/fetch")
-    public ResponseEntity<QueryDto> fetchQueryDetails(@RequestParam Integer queryId)
+    @GetMapping("/{queryId}")
+    public ResponseEntity<QueryDto> fetchQueryDetails(@PathVariable Long queryId)
     {
         QueryDto queryDto= iQueryService.fetchQuery(queryId);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(queryDto);
     }
-    @PutMapping("/update")
-    public ResponseEntity<ResponseDto> updateDetails(@RequestBody QueryDto queryDto) {
-        boolean isUpdated = iQueryService.updateQuery(queryDto);
+
+    @PutMapping("/{queryId}")
+    public ResponseEntity<ResponseDto> updateDetails(@PathVariable Long queryId, @RequestBody QueryDto queryDto) {
+        boolean isUpdated = iQueryService.updateQuery(queryId, queryDto);
         if (isUpdated) {
             return ResponseEntity.status(HttpStatus.OK)
                     .body(new ResponseDto("Updated successfully", HttpStatus.ACCEPTED));
@@ -40,8 +41,9 @@ public class QueryController {
                     .body(new ResponseDto("Unable to update", HttpStatus.BAD_REQUEST));
         }
     }
-    @DeleteMapping("/delete")
-    public ResponseEntity<ResponseDto> deleteAccounts(@RequestParam Integer queryId){
+
+    @DeleteMapping("/{queryId}")
+    public ResponseEntity<ResponseDto> deleteAccounts(@PathVariable Long queryId){
         boolean isDeleted = iQueryService.deleteQuery(queryId);
         if (isDeleted) {
             return ResponseEntity.status(HttpStatus.OK)
